@@ -4,10 +4,11 @@ import { Link, useParams, Navigate } from 'react-router-dom';
 import ROUTES from '../../app/routes';
 // import selectors
 import { selectTopics } from './topicsSlice';
+import { selectQuizzes } from '../quizzes/quizzesSlice';
 
 export default function Topic() {
   const topics = useSelector(selectTopics); // replace with selector
-  const quizzes = {}; // replace with selector
+  const quizzes = useSelector(selectQuizzes); // replace with selector
   const { topicId } = useParams();
   const topic = topics[topicId];
 
